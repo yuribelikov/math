@@ -27,8 +27,9 @@ public class ExerciseEq extends Exercise
     System.out.println("o: " + o);
 
     a = (1 + rnd(5)) * ng(0.2);
-    x = rnd(5) * ng(0.4);
-    c = rnd(10) * ng(0.2);
+    x = rnd(10) * ng(0.4);
+    x += (x == 0 ? 1 : 0);
+    c = rnd(15) * ng(0.2);
 
     if (type == Type.axb0)  // ax + b = 0   ->  3x + 6 = 0
     {
@@ -48,7 +49,9 @@ public class ExerciseEq extends Exercise
     }
     else if (type == Type.axbcdx)   // ax + b = c + dx
     {
-      d = (1 + rnd(3)) * ng(0.5);
+      d = (1 + rnd(6)) * ng(0.5);
+      d += (d == 0 ? 1 : 0);
+
       if (o == ADD)   // ax + b = c + dx
         b = c + d * x - a * x;
       else                  // ax - b = c + dx
